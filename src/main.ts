@@ -1,6 +1,9 @@
 import { columnHeader, getColumnIndexMap, Row } from './spreadsheet'
 import { Message, sendPushMessage, sendReplyMessage } from './line'
 
+/**
+ * 動作確認用の関数
+ */
 export const main = () => {
   console.log('🐛 debug test')
 }
@@ -50,8 +53,10 @@ const add = (text: string, replyToken: string, userId: string): void => {
     sendError(replyToken)
     return
   }
+  // CHECK
   const match = text.match(reg)
   // 日付を取得
+  // CHECK
   const dateStr = match?.[1] ?? ''
   const date = new Date(dateStr)
   // 有効な日付であることを確認する, 空文字もここで弾けるはず
@@ -85,7 +90,7 @@ const add = (text: string, replyToken: string, userId: string): void => {
 }
 
 /**
- * リマインドメッセージを送信する
+ * エラーメッセージを送信する
  * @param replyToken
  */
 const sendError = (replyToken: string): void => {

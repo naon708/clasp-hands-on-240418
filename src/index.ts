@@ -1,8 +1,7 @@
 import { doPost, main, remind } from './main'
 
-declare const global: {
-  [x: string]: unknown
-}
+// CHECK
+declare const global: { [x: string]: unknown }
 
 global.main = main
 global.doPost = doPost

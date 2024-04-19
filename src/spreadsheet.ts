@@ -20,6 +20,7 @@ export const getColumnIndexMap = (
     .getValues()[0]
 
   // 列数情報を作成
+  // CHECK: reduce<hoge>()
   return headerValues.reduce<ColumnHeaderIndexMap>((acc, item, index) => {
     if (isColumnHeader(item)) {
       acc[item] = index
